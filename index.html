@@ -3,7 +3,7 @@
     <!--#include virtual="head.html" -->
     <meta charset="utf-8">
     <meta http-equiv="content-type" content="text/html;charset=utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#2A3A4B">
     <!--#include virtual="base.html" -->
 
@@ -25,16 +25,8 @@
                 Component: JitsiMeetJS.app.entryPoints.APP
             })
 
-            const inIframe = () => {
-                try {
-                    return window.self !== window.top;
-                } catch (e) {
-                    return true;
-                }
-            };
-
             const isElectron = navigator.userAgent.includes('Electron');
-            const shouldRegisterWorker = !isElectron && !inIframe() && 'serviceWorker' in navigator;
+            const shouldRegisterWorker = !isElectron && 'serviceWorker' in navigator;
 
             if (shouldRegisterWorker) {
                 navigator.serviceWorker
@@ -194,10 +186,10 @@
     <!--#include virtual="static/settingsToolbarAdditionalContent.html" -->
   </head>
   <body>
-    <noscript aria-hidden="true">
+    <noscript>
         <div>JavaScript is disabled. </br>For this site to work you have to enable JavaScript.</div>
     </noscript>
     <!--#include virtual="body.html" -->
-    <div id="react" role="main"></div>
+    <div id="react"></div>
   </body>
 </html>

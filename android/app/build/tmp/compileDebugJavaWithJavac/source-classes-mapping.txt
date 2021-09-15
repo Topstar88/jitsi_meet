@@ -1,0 +1,7 @@
+org/jitsi/meet/MainActivity.java
+ org.jitsi.meet.MainActivity
+ org.jitsi.meet.MainActivity$1
+org/jitsi/meet/BuildConfig.java
+ org.jitsi.meet.BuildConfig
+org/jitsi/meet/GoogleServicesHelper.java
+ org.jitsi.meet.GoogleServicesHelper

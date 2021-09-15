@@ -51,7 +51,6 @@
      * and tooltips from getting a new location context due to translate3d.
      */
     .connection-indicator,
-    .local-video-menu-trigger,
     .remote-video-menu-trigger,
     .indicator-icon-container {
         transform: translate3d(0, 0, 0);
@@ -69,9 +68,7 @@
      * Move the remote video menu trigger to the bottom left of the video
      * thumbnail.
      */
-    .localvideomenu,
     .remotevideomenu,
-    .local-video-menu-trigger,
     .remote-video-menu-trigger {
         bottom: 0;
         left: 0;
@@ -79,9 +76,8 @@
         right: auto;
     }
 
-    .local-video-menu-trigger,
     .remote-video-menu-trigger {
-        margin-bottom: 3px;
+        margin-bottom: 7px;
         margin-left: $remoteVideoMenuIconMargin;
     }
 }

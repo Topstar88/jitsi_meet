@@ -26,21 +26,30 @@ static NSString *const WelcomePageEnabledFeatureFlag = @"welcomepage.enabled";
 
 
 @implementation JitsiMeetConferenceOptionsBuilder {
+    NSNumber *_audioOnly;
+    NSNumber *_audioMuted;
+    NSNumber *_videoMuted;
     NSMutableDictionary *_featureFlags;
-    NSMutableDictionary *_config;
 }
 
+@dynamic audioOnly;
+@dynamic audioMuted;
+@dynamic videoMuted;
 @dynamic welcomePageEnabled;
 
 - (instancetype)init {
     if (self = [super init]) {
         _serverURL = nil;
         _room = nil;
+        _subject = nil;
         _token = nil;
 
         _colorScheme = nil;
-        _config = [[NSMutableDictionary alloc] init];
         _featureFlags = [[NSMutableDictionary alloc] init];
+
+        _audioOnly = nil;
+        _audioMuted = nil;
+        _videoMuted = nil;
 
         _userInfo = nil;
     }
@@ -56,47 +65,31 @@ static NSString *const WelcomePageEnabledFeatureFlag = @"welcomepage.enabled";
     _featureFlags[flag] = value;
 }
 
+#pragma mark - Dynamic properties
+
 - (void)setAudioOnly:(BOOL)audioOnly {
-    [self setConfigOverride:@"startAudioOnly" withBoolean:audioOnly];
+    _audioOnly = [NSNumber numberWithBool:audioOnly];
+}
+
+- (BOOL)audioOnly {
+    return _audioOnly && [_audioOnly boolValue];
 }
 
 - (void)setAudioMuted:(BOOL)audioMuted {
-    [self setConfigOverride:@"startWithAudioMuted" withBoolean:audioMuted];
+    _audioMuted = [NSNumber numberWithBool:audioMuted];
+}
+
+- (BOOL)audioMuted {
+    return _audioMuted && [_audioMuted boolValue];
 }
 
 - (void)setVideoMuted:(BOOL)videoMuted {
-    [self setConfigOverride:@"startWithVideoMuted" withBoolean:videoMuted];
+    _videoMuted = [NSNumber numberWithBool:videoMuted];
 }
 
-- (void)setCallHandle:(NSString *_Nonnull)callHandle {
-    [self setConfigOverride:@"callHandle" withValue:callHandle];
+- (BOOL)videoMuted {
+    return _videoMuted && [_videoMuted boolValue];
 }
-
-- (void)setCallUUID:(NSUUID *_Nonnull)callUUID {
-    [self setConfigOverride:@"callUUID" withValue:[callUUID UUIDString]];
-}
-
-- (void)setSubject:(NSString *_Nonnull)subject {
-    [self setConfigOverride:@"subject" withValue:subject];
-}
-
-- (void)setConfigOverride:(NSString *_Nonnull)config withBoolean:(BOOL)value {
-    [self setConfigOverride:config withValue:[NSNumber numberWithBool:value]];
-}
-
-- (void)setConfigOverride:(NSString *_Nonnull)config withDictionary:(NSDictionary*)dictionary {
-    _config[config] = dictionary;
-}
-
-- (void)setConfigOverride:(NSString *_Nonnull)config withArray:( NSArray * _Nonnull)array {
-    _config[config] = array;
-}
-
-- (void)setConfigOverride:(NSString *_Nonnull)config withValue:(id _Nonnull)value {
-    _config[config] = value;
-}
-
-#pragma mark - Dynamic properties
 
 - (void)setWelcomePageEnabled:(BOOL)welcomePageEnabled {
     [self setFeatureFlag:WelcomePageEnabledFeatureFlag
@@ -109,16 +102,47 @@ static NSString *const WelcomePageEnabledFeatureFlag = @"welcomepage.enabled";
     return n != nil ? [n boolValue] : NO;
 }
 
+#pragma mark - Private API
+
+- (NSNumber *)getAudioOnly {
+    return _audioOnly;
+}
+
+- (NSNumber *)getAudioMuted {
+    return _audioMuted;
+}
+
+- (NSNumber *)getVideoMuted {
+    return _videoMuted;
+}
+
 @end
 
 @implementation JitsiMeetConferenceOptions {
+    NSNumber *_audioOnly;
+    NSNumber *_audioMuted;
+    NSNumber *_videoMuted;
     NSDictionary *_featureFlags;
-    NSDictionary *_config;
 }
 
+@dynamic audioOnly;
+@dynamic audioMuted;
+@dynamic videoMuted;
 @dynamic welcomePageEnabled;
 
 #pragma mark - Dynamic properties
+
+- (BOOL)audioOnly {
+    return _audioOnly && [_audioOnly boolValue];
+}
+
+- (BOOL)audioMuted {
+    return _audioMuted && [_audioMuted boolValue];
+}
+
+- (BOOL)videoMuted {
+    return _videoMuted && [_videoMuted boolValue];
+}
 
 - (BOOL)welcomePageEnabled {
     NSNumber *n = _featureFlags[WelcomePageEnabledFeatureFlag];
@@ -132,11 +156,14 @@ static NSString *const WelcomePageEnabledFeatureFlag = @"welcomepage.enabled";
     if (self = [super init]) {
         _serverURL = builder.serverURL;
         _room = builder.room;
+        _subject = builder.subject;
         _token = builder.token;
 
         _colorScheme = builder.colorScheme;
 
-        _config = builder.config;
+        _audioOnly = [builder getAudioOnly];
+        _audioMuted = [builder getAudioMuted];
+        _videoMuted = [builder getVideoMuted];
 
         _featureFlags = [NSDictionary dictionaryWithDictionary:builder.featureFlags];
 
@@ -165,6 +192,20 @@ static NSString *const WelcomePageEnabledFeatureFlag = @"welcomepage.enabled";
         props[@"colorScheme"] = self.colorScheme;
     }
 
+    NSMutableDictionary *config = [[NSMutableDictionary alloc] init];
+    if (_audioOnly != nil) {
+        config[@"startAudioOnly"] = @(self.audioOnly);
+    }
+    if (_audioMuted != nil) {
+        config[@"startWithAudioMuted"] = @(self.audioMuted);
+    }
+    if (_videoMuted != nil) {
+        config[@"startWithVideoMuted"] = @(self.videoMuted);
+    }
+    if (_subject != nil) {
+        config[@"subject"] = self.subject;
+    }
+
     NSMutableDictionary *urlProps = [[NSMutableDictionary alloc] init];
 
     // The room is fully qualified.
@@ -188,7 +229,7 @@ static NSString *const WelcomePageEnabledFeatureFlag = @"welcomepage.enabled";
         props[@"userInfo"] = [self.userInfo asDict];
     }
 
-    urlProps[@"config"] = _config;
+    urlProps[@"config"] = config;
     props[@"url"] = urlProps;
 
     return props;

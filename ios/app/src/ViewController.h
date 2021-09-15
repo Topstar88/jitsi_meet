@@ -14,8 +14,9 @@
  * limitations under the License.
  */
 
-@import UIKit;
-@import JitsiMeetSDK;
+#import <UIKit/UIKit.h>
+
+#import <JitsiMeet/JitsiMeet.h>
 
 @interface ViewController : UIViewController<JitsiMeetViewDelegate>
 

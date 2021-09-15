@@ -16,7 +16,7 @@
 
 #import "FIRUtilities.h"
 
-@import JitsiMeetSDK;
+@import JitsiMeet;
 
 @implementation FIRUtilities
 

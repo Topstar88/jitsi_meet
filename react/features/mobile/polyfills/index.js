@@ -1,2 +1,0 @@
-import './bundler';
-import './browser';

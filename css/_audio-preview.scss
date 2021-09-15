@@ -1,42 +1,26 @@
 .audio-preview {
-    display: inline-block;
-
     &-content {
-        background: $menuBG;
-        border-radius: 3px;
-        font-size: 14px;
+        background: #2A3A4B;
+        font-size: 15px;
         line-height: 24px;
         max-height: 456px;
         overflow: auto;
-        width: 300px;
-        &-ul {
-            margin:0;
-            padding:0;
-            list-style-type: none;
-        }
+        width: 328px;
     }
 
     &-header {
         color: #fff;
-        align-items: center;
         display: flex;
-        margin-top: 8px;
-        padding: 8px 16px;
+        padding: 16px;
 
         &-icon {
+            color: #A4B8D1;
             display: inline-block;
-
-            svg {
-                fill: #fff;
-            }
-        }
-
-        &--bordered {
-            border-bottom: 1px solid #4C4D50;
         }
 
         &-text {
-            margin-left: 12px;
+            font-weight: bold;
+            margin-left: 8px;
         }
     }
 
@@ -45,18 +29,19 @@
         color: #fff;
         cursor: pointer;
         display: flex;
-        padding: 8px 0;
+        padding: 12px 0;
         margin-left: 48px;
 
         &--selected {
-            background: #131519;
+            background: #1C2025;
             cursor: initial;
             margin-left: 0;
-            padding-left: 18px;
+            padding-left: 21px;
         }
 
         &-text {
             color: #fff;
+            font-size: 15px;
             display: inline-block;
             line-height: 24px;
             text-overflow: ellipsis;
@@ -69,21 +54,14 @@
     &-speaker {
         position: relative;
 
-        &-ul {
-            margin:0;
-            padding:0;
-            list-style-type: none;
-        }
-
-        &:hover, &:focus-within, &:focus {
+        &:hover {
             .audio-preview-entry {
-                background: #36383C;
+                background: #3F4E5E;
                 margin-left: 0;
                 padding-left: 48px;
 
                 &--selected {
-                    padding-left: 18px;
-                    background: $newToolbarBackgroundColor;
+                    padding-left: 21px;
                 }
             }
 
@@ -92,16 +70,12 @@
             }
 
             .audio-preview-entry-text {
-                max-width: 178px;
+                max-width: 196px;
             }
         }
 
-        &:last-child {
-            padding-bottom: 8px;
-        }
-
         .audio-preview-entry-text {
-            max-width: 238px;
+            max-width: 256px;
         }
     }
 
@@ -110,19 +84,18 @@
 
         &:hover {
             .audio-preview-entry {
-                background: #36383C;
+                background: #3F4E5E;
                 margin-left: 0;
                 padding-left: 48px;
 
                 &--selected {
-                    background: $newToolbarBackgroundColor;
-                    padding-left: 18px;
+                    padding-left: 21px;
                 }
             }
         }
 
         .audio-preview-entry-text {
-            max-width: 178px;
+            max-width: 196px;
         }
     }
 
@@ -137,7 +110,7 @@
 
         &--check {
             background: #31B76A;
-            margin-right: 16px;
+            margin-right: 13px;
         }
 
         &--exclamation {
@@ -148,11 +121,6 @@
         }
     }
 
-    &-hr {
-        border-top: 1px solid #4C4D50;
-        border-bottom: 0;
-    }
-
     &-test-button {
         display: none;
         background: #FFF;
@@ -161,22 +129,22 @@
         color: #1C2025;
         cursor: pointer;
         font-weight: 600;
-        font-size: 0.8rem;
+        font-size: 15px;
         line-height: 24px;
-        padding: 2px 8px;
+        padding: 4px 16px;
         position: absolute;
         right: 16px;
-        top: 5px;
+        top: 8px;
     }
 
     &-meter-mic {
         position: absolute;
         right: 16px;
-        top: 14px;
+        top: 18px;
     }
 
-    // Override @atlaskit/InlineDialog container which is made with styled components
-    & > div:nth-child(2) {
+   // Override @atlaskit/InlineDialog container which is made with styled components
+    & > div > div:nth-child(2) > div > div {
         outline: none;
         padding: 0;
     }

@@ -1,0 +1,8 @@
+R_DEF: Internal format may change without notice
+local
+id jitsiFragment
+layout activity_jitsi_meet
+string app_name
+string dropbox_app_key
+string ongoing_notification_text
+string ongoing_notification_title

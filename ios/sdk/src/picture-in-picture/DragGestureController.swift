@@ -14,8 +14,6 @@
  * limitations under the License.
  */
 
-import UIKit
-
 final class DragGestureController {
 
     var insets: UIEdgeInsets = UIEdgeInsets.zero

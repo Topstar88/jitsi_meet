@@ -5,6 +5,11 @@
     .description {
         font-size: 13px;
         margin: 15px 0;
+
+        .read-more {
+            cursor: pointer;
+            opacity: .7;
+        }
     }
 
     .control-row {

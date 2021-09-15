@@ -1,5 +1,3 @@
-$rangeInputThumbSize: 14;
-
 /**
  * Disable the default webkit styles for range inputs (sliders).
  */
@@ -9,10 +7,10 @@ input[type=range]{
 }
 
 /**
- * Show focus for keyboard accessibility.
+ * Disable the default focus styles for webkit range inputs (sliders).
  */
 input[type=range]:focus {
-    outline: 1px solid white !important;
+    outline: none;
 }
 
 /**

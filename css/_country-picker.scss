@@ -69,7 +69,7 @@
 }
 
 // Override @Atlaskit/inline-dialog styles
-.cpick-container > div:nth-child(2) {
+.cpick-container > div > div:nth-child(2) > div > div {
     outline: none;
     padding: 8px 0 0 0;
 }

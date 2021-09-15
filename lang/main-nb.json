@@ -46,11 +46,9 @@
         "messagebox": "Skriv en melding",
         "nickname": {
             "popover": "Velg et kallenavn",
-            "title": "",
-            "titleWithPolls": ""
+            "title": ""
         },
         "title": "",
-        "titleWithPolls": "",
         "messageTo": "Privat melding til {{recipient}}",
         "fieldPlaceHolder": "Skriv inn din melding her"
     },
@@ -106,7 +104,7 @@
     },
     "deepLinking": {
         "downloadApp": "Last ned programmet",
-        "openApp": "Fortsett til programmet"
+        "openApp": "Fortsett til programmet",
     },
     "defaultLink": "f.eks.",
     "deviceError": {

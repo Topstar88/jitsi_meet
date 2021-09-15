@@ -1,0 +1,28 @@
+{
+  "version": 1,
+  "applicationId": "org.jitsi.meet",
+  "variantType": "BASE_APK",
+  "elements": [
+    {
+      "outputType": {
+        "type": "PROCESSED_RES"
+      },
+      "apkData": {
+        "type": "MAIN",
+        "splits": [],
+        "versionCode": 6002631,
+        "versionName": "20.5.0",
+        "outputFile": "app-release.apk",
+        "fullName": "release",
+        "baseName": "release",
+        "dirName": ""
+      },
+      "path": "resources-release.ap_",
+      "properties": {
+        "packageId": "org.jitsi.meet",
+        "split": "",
+        "minSdkVersion": "23"
+      }
+    }
+  ]
+}

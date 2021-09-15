@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleMigrationSettings" migrationVersion="1" />
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <option name="testRunner" value="PLATFORM" />
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="gradleJvm" value="1.8" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/sdk" />
+            <option value="$PROJECT_DIR$/../node_modules/@react-native-community/async-storage/android" />
+            <option value="$PROJECT_DIR$/../node_modules/@react-native-community/google-signin/android" />
+            <option value="$PROJECT_DIR$/../node_modules/@react-native-community/netinfo/android" />
+            <option value="$PROJECT_DIR$/../node_modules/react-native-background-timer/android" />
+            <option value="$PROJECT_DIR$/../node_modules/react-native-calendar-events/android" />
+            <option value="$PROJECT_DIR$/../node_modules/react-native-default-preference/android" />
+            <option value="$PROJECT_DIR$/../node_modules/react-native-immersive/android" />
+            <option value="$PROJECT_DIR$/../node_modules/react-native-keep-awake/android" />
+            <option value="$PROJECT_DIR$/../node_modules/react-native-linear-gradient/android" />
+            <option value="$PROJECT_DIR$/../node_modules/react-native-sound/android" />
+            <option value="$PROJECT_DIR$/../node_modules/react-native-splash-screen/android" />
+            <option value="$PROJECT_DIR$/../node_modules/react-native-svg/android" />
+            <option value="$PROJECT_DIR$/../node_modules/react-native-webrtc/android" />
+            <option value="$PROJECT_DIR$/../node_modules/react-native-webview/android" />
+          </set>
+        </option>
+        <option name="resolveModulePerSourceSet" value="false" />
+        <option name="useQualifiedModuleNames" value="true" />
+      </GradleProjectSettings>
+    </option>
+  </component>
+</project>

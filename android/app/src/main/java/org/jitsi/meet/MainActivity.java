@@ -38,7 +38,7 @@ import java.lang.reflect.Method;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Collection;
-import java.util.HashMap;
+import java.util.Map;
 
 /**
  * The one and only Activity that the Jitsi Meet app needs. The
@@ -183,8 +183,8 @@ public class MainActivity extends JitsiMeetActivity {
     }
 
     @Override
-    protected void onConferenceTerminated(HashMap<String, Object> extraData) {
-        Log.d(TAG, "Conference terminated: " + extraData);
+    public void onConferenceTerminated(Map<String, Object> data) {
+        Log.d(TAG, "Conference terminated: " + data);
     }
 
     // Activity lifecycle method overrides

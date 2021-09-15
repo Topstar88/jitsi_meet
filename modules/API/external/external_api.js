@@ -7,6 +7,7 @@ import {
     Transport
 } from '../../transport';
 
+import electronPopupsConfig from './electronPopupsConfig.json';
 import {
     getAvailableDevices,
     getCurrentDevices,
@@ -28,43 +29,28 @@ const ALWAYS_ON_TOP_FILENAMES = [
  */
 const commands = {
     avatarUrl: 'avatar-url',
-    cancelPrivateChat: 'cancel-private-chat',
     displayName: 'display-name',
     e2eeKey: 'e2ee-key',
     email: 'email',
     toggleLobby: 'toggle-lobby',
     hangup: 'video-hangup',
-    initiatePrivateChat: 'initiate-private-chat',
-    kickParticipant: 'kick-participant',
     muteEveryone: 'mute-everyone',
-    overwriteConfig: 'overwrite-config',
     password: 'password',
     pinParticipant: 'pin-participant',
     resizeLargeVideo: 'resize-large-video',
-    sendChatMessage: 'send-chat-message',
     sendEndpointTextMessage: 'send-endpoint-text-message',
     sendTones: 'send-tones',
-    setFollowMe: 'set-follow-me',
     setLargeVideoParticipant: 'set-large-video-participant',
-    setParticipantVolume: 'set-participant-volume',
-    setTileView: 'set-tile-view',
     setVideoQuality: 'set-video-quality',
     startRecording: 'start-recording',
-    startShareVideo: 'start-share-video',
     stopRecording: 'stop-recording',
-    stopShareVideo: 'stop-share-video',
     subject: 'subject',
     submitFeedback: 'submit-feedback',
     toggleAudio: 'toggle-audio',
-    toggleCamera: 'toggle-camera',
-    toggleCameraMirror: 'toggle-camera-mirror',
     toggleChat: 'toggle-chat',
     toggleFilmStrip: 'toggle-film-strip',
-    toggleRaiseHand: 'toggle-raise-hand',
-    toggleShareAudio: 'toggle-share-audio',
     toggleShareScreen: 'toggle-share-screen',
     toggleTileView: 'toggle-tile-view',
-    toggleVirtualBackgroundDialog: 'toggle-virtual-background',
     toggleVideo: 'toggle-video'
 };
 
@@ -77,12 +63,9 @@ const events = {
     'audio-availability-changed': 'audioAvailabilityChanged',
     'audio-mute-status-changed': 'audioMuteStatusChanged',
     'camera-error': 'cameraError',
-    'chat-updated': 'chatUpdated',
-    'content-sharing-participants-changed': 'contentSharingParticipantsChanged',
     'device-list-changed': 'deviceListChanged',
     'display-name-change': 'displayNameChange',
     'email-change': 'emailChange',
-    'error-occurred': 'errorOccurred',
     'endpoint-text-message-received': 'endpointTextMessageReceived',
     'feedback-submitted': 'feedbackSubmitted',
     'feedback-prompt-displayed': 'feedbackPromptDisplayed',
@@ -90,9 +73,6 @@ const events = {
     'incoming-message': 'incomingMessage',
     'log': 'log',
     'mic-error': 'micError',
-    'mouse-enter': 'mouseEnter',
-    'mouse-leave': 'mouseLeave',
-    'mouse-move': 'mouseMove',
     'outgoing-message': 'outgoingMessage',
     'participant-joined': 'participantJoined',
     'participant-kicked-out': 'participantKickedOut',
@@ -100,8 +80,6 @@ const events = {
     'participant-role-changed': 'participantRoleChanged',
     'password-required': 'passwordRequired',
     'proxy-connection-event': 'proxyConnectionEvent',
-    'raise-hand-updated': 'raiseHandUpdated',
-    'recording-status-changed': 'recordingStatusChanged',
     'video-ready-to-close': 'readyToClose',
     'video-conference-joined': 'videoConferenceJoined',
     'video-conference-left': 'videoConferenceLeft',
@@ -172,7 +150,7 @@ function parseArguments(args) {
 
     switch (typeof firstArg) {
     case 'string': // old arguments format
-    case 'undefined': {
+    case undefined: {
         // Not sure which format but we are trying to parse the old
         // format because if the new format is used everything will be undefined
         // anyway.
@@ -213,7 +191,7 @@ function parseArguments(args) {
  * @param {any} value - The value to be parsed.
  * @returns {string|undefined} The parsed value that can be used for setting
  * sizes through the style property. If invalid value is passed the method
- * returns undefined.
+ * retuns undefined.
  */
 function parseSizeParam(value) {
     let parsedValue;
@@ -337,7 +315,7 @@ export default class JitsiMeetExternalAPI extends EventEmitter {
         const frameName = `jitsiConferenceFrame${id}`;
 
         this._frame = document.createElement('iframe');
-        this._frame.allow = 'camera; microphone; display-capture; autoplay; clipboard-write';
+        this._frame.allow = 'camera; microphone; display-capture';
         this._frame.src = this._url;
         this._frame.name = frameName;
         this._frame.id = frameName;
@@ -591,12 +569,6 @@ export default class JitsiMeetExternalAPI extends EventEmitter {
      * logLevel: the message log level
      * arguments: an array of strings that compose the actual log message
      * }}
-     * {@code chatUpdated} - receives event notifications about chat state being
-     * updated. The listener will receive object with the following structure:
-     * {{
-     *  'unreadCount': unreadCounter, // the unread message(s) counter,
-     *  'isOpen': isOpen, // whether the chat panel is open or not
-     * }}
      * {@code incomingMessage} - receives event notifications about incoming
      * messages. The listener will receive object with the following structure:
      * {{
@@ -752,46 +724,12 @@ export default class JitsiMeetExternalAPI extends EventEmitter {
     }
 
     /**
-     * Gets a list of the currently sharing participant id's.
-     *
-     * @returns {Promise} - Resolves with the list of participant id's currently sharing.
-     */
-    getContentSharingParticipants() {
-        return this._transport.sendRequest({
-            name: 'get-content-sharing-participants'
-        });
-    }
-
-    /**
      * Returns Promise that resolves with current selected devices.
      *
      * @returns {Promise}
      */
     getCurrentDevices() {
         return getCurrentDevices(this._transport);
-    }
-
-    /**
-     * Returns any custom avatars backgrounds.
-     *
-     * @returns {Promise} - Resolves with the list of custom avatar backgrounds.
-     */
-    getCustomAvatarBackgrounds() {
-        return this._transport.sendRequest({
-            name: 'get-custom-avatar-backgrounds'
-        });
-    }
-
-    /**
-     * Returns the current livestream url.
-     *
-     * @returns {Promise} - Resolves with the current livestream URL if exists, with
-     * undefined if not and rejects on failure.
-     */
-    getLivestreamUrl() {
-        return this._transport.sendRequest({
-            name: 'get-livestream-url'
-        });
     }
 
     /**
@@ -1131,5 +1069,17 @@ export default class JitsiMeetExternalAPI extends EventEmitter {
      */
     stopRecording(mode) {
         this.executeCommand('startRecording', mode);
+    }
+
+    /**
+     * Returns the configuration for electron for the windows that are open
+     * from Jitsi Meet.
+     *
+     * @returns {Promise<Object>}
+     *
+     * NOTE: For internal use only.
+     */
+    _getElectronPopupsConfig() {
+        return Promise.resolve(electronPopupsConfig);
     }
 }

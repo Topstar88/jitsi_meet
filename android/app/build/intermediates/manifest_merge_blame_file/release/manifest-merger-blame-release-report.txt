@@ -1,0 +1,385 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="org.jitsi.meet"
+4    android:installLocation="auto"
+5    android:versionCode="6002631"
+6    android:versionName="20.5.0" >
+7
+8    <uses-sdk
+9        android:minSdkVersion="23"
+9-->/Users/tony/Downloads/jitsi-meet-master/android/app/src/main/AndroidManifest.xml
+10        android:targetSdkVersion="29" />
+10-->/Users/tony/Downloads/jitsi-meet-master/android/app/src/main/AndroidManifest.xml
+11    <!-- XXX ACCESS_NETWORK_STATE is required by WebRTC. -->
+12    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+12-->[:sdk] /Users/tony/Downloads/jitsi-meet-master/android/sdk/build/intermediates/library_manifest/release/AndroidManifest.xml:9:5-79
+12-->[:sdk] /Users/tony/Downloads/jitsi-meet-master/android/sdk/build/intermediates/library_manifest/release/AndroidManifest.xml:9:22-76
+13    <uses-permission android:name="android.permission.BLUETOOTH" />
+13-->[:sdk] /Users/tony/Downloads/jitsi-meet-master/android/sdk/build/intermediates/library_manifest/release/AndroidManifest.xml:10:5-68
+13-->[:sdk] /Users/tony/Downloads/jitsi-meet-master/android/sdk/build/intermediates/library_manifest/release/AndroidManifest.xml:10:22-65
+14    <uses-permission android:name="android.permission.CAMERA" />
+14-->[:sdk] /Users/tony/Downloads/jitsi-meet-master/android/sdk/build/intermediates/library_manifest/release/AndroidManifest.xml:11:5-65
+14-->[:sdk] /Users/tony/Downloads/jitsi-meet-master/android/sdk/build/intermediates/library_manifest/release/AndroidManifest.xml:11:22-62
+15    <uses-permission android:name="android.permission.INTERNET" />
+15-->[:sdk] /Users/tony/Downloads/jitsi-meet-master/android/sdk/build/intermediates/library_manifest/release/AndroidManifest.xml:12:5-67
+15-->[:sdk] /Users/tony/Downloads/jitsi-meet-master/android/sdk/build/intermediates/library_manifest/release/AndroidManifest.xml:12:22-64
+16    <uses-permission android:name="android.permission.MANAGE_OWN_CALLS" />
+16-->[:sdk] /Users/tony/Downloads/jitsi-meet-master/android/sdk/build/intermediates/library_manifest/release/AndroidManifest.xml:13:5-75
+16-->[:sdk] /Users/tony/Downloads/jitsi-meet-master/android/sdk/build/intermediates/library_manifest/release/AndroidManifest.xml:13:22-72
+17    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+17-->[:sdk] /Users/tony/Downloads/jitsi-meet-master/android/sdk/build/intermediates/library_manifest/release/AndroidManifest.xml:14:5-80
+17-->[:sdk] /Users/tony/Downloads/jitsi-meet-master/android/sdk/build/intermediates/library_manifest/release/AndroidManifest.xml:14:22-77
+18    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+18-->[:sdk] /Users/tony/Downloads/jitsi-meet-master/android/sdk/build/intermediates/library_manifest/release/AndroidManifest.xml:15:5-71
+18-->[:sdk] /Users/tony/Downloads/jitsi-meet-master/android/sdk/build/intermediates/library_manifest/release/AndroidManifest.xml:15:22-68
+19    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+19-->[:sdk] /Users/tony/Downloads/jitsi-meet-master/android/sdk/build/intermediates/library_manifest/release/AndroidManifest.xml:16:5-78
+19-->[:sdk] /Users/tony/Downloads/jitsi-meet-master/android/sdk/build/intermediates/library_manifest/release/AndroidManifest.xml:16:22-75
+20    <uses-permission android:name="android.permission.WAKE_LOCK" />
+20-->[:sdk] /Users/tony/Downloads/jitsi-meet-master/android/sdk/build/intermediates/library_manifest/release/AndroidManifest.xml:17:5-68
+20-->[:sdk] /Users/tony/Downloads/jitsi-meet-master/android/sdk/build/intermediates/library_manifest/release/AndroidManifest.xml:17:22-65
+21    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+21-->[:sdk] /Users/tony/Downloads/jitsi-meet-master/android/sdk/build/intermediates/library_manifest/release/AndroidManifest.xml:18:5-76
+21-->[:sdk] /Users/tony/Downloads/jitsi-meet-master/android/sdk/build/intermediates/library_manifest/release/AndroidManifest.xml:18:22-73
+22    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+22-->[:sdk] /Users/tony/Downloads/jitsi-meet-master/android/sdk/build/intermediates/library_manifest/release/AndroidManifest.xml:19:5-77
+22-->[:sdk] /Users/tony/Downloads/jitsi-meet-master/android/sdk/build/intermediates/library_manifest/release/AndroidManifest.xml:19:22-74
+23
+24    <uses-feature
+24-->[:sdk] /Users/tony/Downloads/jitsi-meet-master/android/sdk/build/intermediates/library_manifest/release/AndroidManifest.xml:21:5-23:35
+25        android:glEsVersion="0x00020000"
+25-->[:sdk] /Users/tony/Downloads/jitsi-meet-master/android/sdk/build/intermediates/library_manifest/release/AndroidManifest.xml:22:9-41
+26        android:required="true" />
+26-->[:sdk] /Users/tony/Downloads/jitsi-meet-master/android/sdk/build/intermediates/library_manifest/release/AndroidManifest.xml:23:9-32
+27    <uses-feature
+27-->[:sdk] /Users/tony/Downloads/jitsi-meet-master/android/sdk/build/intermediates/library_manifest/release/AndroidManifest.xml:24:5-26:36
+28        android:name="android.hardware.camera"
+28-->[:sdk] /Users/tony/Downloads/jitsi-meet-master/android/sdk/build/intermediates/library_manifest/release/AndroidManifest.xml:25:9-47
+29        android:required="false" />
+29-->[:sdk] /Users/tony/Downloads/jitsi-meet-master/android/sdk/build/intermediates/library_manifest/release/AndroidManifest.xml:26:9-33
+30    <uses-feature
+30-->[:sdk] /Users/tony/Downloads/jitsi-meet-master/android/sdk/build/intermediates/library_manifest/release/AndroidManifest.xml:27:5-29:36
+31        android:name="android.hardware.camera.autofocus"
+31-->[:sdk] /Users/tony/Downloads/jitsi-meet-master/android/sdk/build/intermediates/library_manifest/release/AndroidManifest.xml:28:9-57
+32        android:required="false" />
+32-->[:sdk] /Users/tony/Downloads/jitsi-meet-master/android/sdk/build/intermediates/library_manifest/release/AndroidManifest.xml:29:9-33
+33
+34    <uses-permission android:name="android.permission.WRITE_CALENDAR" />
+34-->[:react-native-calendar-events] /Users/tony/Downloads/jitsi-meet-master/node_modules/react-native-calendar-events/android/build/intermediates/library_manifest/release/AndroidManifest.xml:11:5-73
+34-->[:react-native-calendar-events] /Users/tony/Downloads/jitsi-meet-master/node_modules/react-native-calendar-events/android/build/intermediates/library_manifest/release/AndroidManifest.xml:11:22-70
+35    <uses-permission android:name="android.permission.READ_CALENDAR" />
+35-->[:react-native-calendar-events] /Users/tony/Downloads/jitsi-meet-master/node_modules/react-native-calendar-events/android/build/intermediates/library_manifest/release/AndroidManifest.xml:12:5-72
+35-->[:react-native-calendar-events] /Users/tony/Downloads/jitsi-meet-master/node_modules/react-native-calendar-events/android/build/intermediates/library_manifest/release/AndroidManifest.xml:12:22-69
+36    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" />
+36-->[com.google.android.gms:play-services-measurement:17.5.0] /Users/tony/.gradle/caches/transforms-2/files-2.1/b27ed4897456b0e09918e12bcd605842/jetified-play-services-measurement-17.5.0/AndroidManifest.xml:26:5-110
+36-->[com.google.android.gms:play-services-measurement:17.5.0] /Users/tony/.gradle/caches/transforms-2/files-2.1/b27ed4897456b0e09918e12bcd605842/jetified-play-services-measurement-17.5.0/AndroidManifest.xml:26:22-107
+37
+38    <application
+38-->/Users/tony/Downloads/jitsi-meet-master/android/app/src/main/AndroidManifest.xml:5:3-42:17
+39        android:allowBackup="true"
+39-->/Users/tony/Downloads/jitsi-meet-master/android/app/src/main/AndroidManifest.xml:6:7-33
+40        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+40-->[androidx.core:core:1.3.0] /Users/tony/.gradle/caches/transforms-2/files-2.1/9afcbea7cc03cc6907eaeb81fd5fb9a0/core-1.3.0/AndroidManifest.xml:24:18-86
+41        android:extractNativeLibs="false"
+42        android:icon="@mipmap/ic_launcher"
+42-->/Users/tony/Downloads/jitsi-meet-master/android/app/src/main/AndroidManifest.xml:7:7-41
+43        android:label="@string/app_name"
+43-->/Users/tony/Downloads/jitsi-meet-master/android/app/src/main/AndroidManifest.xml:8:7-39
+44        android:networkSecurityConfig="@xml/network_security_config"
+44-->/Users/tony/Downloads/jitsi-meet-master/android/app/src/main/AndroidManifest.xml:9:7-67
+45        android:supportsRtl="true"
+45-->[:sdk] /Users/tony/Downloads/jitsi-meet-master/android/sdk/build/intermediates/library_manifest/release/AndroidManifest.xml:34:9-35
+46        android:theme="@style/AppTheme" >
+46-->/Users/tony/Downloads/jitsi-meet-master/android/app/src/main/AndroidManifest.xml:10:7-38
+47        <meta-data
+47-->/Users/tony/Downloads/jitsi-meet-master/android/app/src/main/AndroidManifest.xml:11:5-13:52
+48            android:name="android.content.APP_RESTRICTIONS"
+48-->/Users/tony/Downloads/jitsi-meet-master/android/app/src/main/AndroidManifest.xml:12:9-56
+49            android:resource="@xml/app_restrictions" />
+49-->/Users/tony/Downloads/jitsi-meet-master/android/app/src/main/AndroidManifest.xml:13:9-49
+50
+51        <activity
+51-->/Users/tony/Downloads/jitsi-meet-master/android/app/src/main/AndroidManifest.xml:14:5-41:16
+52            android:name="org.jitsi.meet.MainActivity"
+52-->/Users/tony/Downloads/jitsi-meet-master/android/app/src/main/AndroidManifest.xml:18:9-37
+53            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize"
+53-->/Users/tony/Downloads/jitsi-meet-master/android/app/src/main/AndroidManifest.xml:15:9-111
+54            android:label="@string/app_name"
+54-->/Users/tony/Downloads/jitsi-meet-master/android/app/src/main/AndroidManifest.xml:16:9-41
+55            android:launchMode="singleTask"
+55-->/Users/tony/Downloads/jitsi-meet-master/android/app/src/main/AndroidManifest.xml:17:9-40
+56            android:resizeableActivity="true"
+56-->/Users/tony/Downloads/jitsi-meet-master/android/app/src/main/AndroidManifest.xml:19:9-42
+57            android:supportsPictureInPicture="true"
+57-->/Users/tony/Downloads/jitsi-meet-master/android/app/src/main/AndroidManifest.xml:20:9-48
+58            android:windowSoftInputMode="adjustResize" >
+58-->/Users/tony/Downloads/jitsi-meet-master/android/app/src/main/AndroidManifest.xml:21:9-51
+59            <meta-data
+59-->/Users/tony/Downloads/jitsi-meet-master/android/app/src/main/AndroidManifest.xml:22:7-97
+60                android:name="firebase_crashlytics_collection_enabled"
+60-->/Users/tony/Downloads/jitsi-meet-master/android/app/src/main/AndroidManifest.xml:22:18-72
+61                android:value="false" />
+61-->/Users/tony/Downloads/jitsi-meet-master/android/app/src/main/AndroidManifest.xml:22:73-94
+62
+63            <intent-filter>
+63-->/Users/tony/Downloads/jitsi-meet-master/android/app/src/main/AndroidManifest.xml:23:7-26:23
+64                <action android:name="android.intent.action.MAIN" />
+64-->/Users/tony/Downloads/jitsi-meet-master/android/app/src/main/AndroidManifest.xml:24:9-61
+64-->/Users/tony/Downloads/jitsi-meet-master/android/app/src/main/AndroidManifest.xml:24:17-58
+65
+66                <category android:name="android.intent.category.LAUNCHER" />
+66-->/Users/tony/Downloads/jitsi-meet-master/android/app/src/main/AndroidManifest.xml:25:9-69
+66-->/Users/tony/Downloads/jitsi-meet-master/android/app/src/main/AndroidManifest.xml:25:19-66
+67            </intent-filter>
+68            <intent-filter>
+68-->/Users/tony/Downloads/jitsi-meet-master/android/app/src/main/AndroidManifest.xml:27:7-34:23
+69                <action android:name="android.intent.action.VIEW" />
+69-->/Users/tony/Downloads/jitsi-meet-master/android/app/src/main/AndroidManifest.xml:28:9-61
+69-->/Users/tony/Downloads/jitsi-meet-master/android/app/src/main/AndroidManifest.xml:28:17-58
+70
+71                <category android:name="android.intent.category.BROWSABLE" />
+71-->/Users/tony/Downloads/jitsi-meet-master/android/app/src/main/AndroidManifest.xml:29:9-70
+71-->/Users/tony/Downloads/jitsi-meet-master/android/app/src/main/AndroidManifest.xml:29:19-67
+72                <category android:name="android.intent.category.DEFAULT" />
+72-->/Users/tony/Downloads/jitsi-meet-master/android/app/src/main/AndroidManifest.xml:30:9-68
+72-->/Users/tony/Downloads/jitsi-meet-master/android/app/src/main/AndroidManifest.xml:30:19-65
+73
+74                <data
+74-->/Users/tony/Downloads/jitsi-meet-master/android/app/src/main/AndroidManifest.xml:31:9-71
+75                    android:host="alpha.jitsi.net"
+75-->/Users/tony/Downloads/jitsi-meet-master/android/app/src/main/AndroidManifest.xml:31:15-45
+76                    android:scheme="https" />
+76-->/Users/tony/Downloads/jitsi-meet-master/android/app/src/main/AndroidManifest.xml:31:46-68
+77                <data
+77-->/Users/tony/Downloads/jitsi-meet-master/android/app/src/main/AndroidManifest.xml:31:9-71
+78                    android:host="beta.meet.jit.si"
+78-->/Users/tony/Downloads/jitsi-meet-master/android/app/src/main/AndroidManifest.xml:31:15-45
+79                    android:scheme="https" />
+79-->/Users/tony/Downloads/jitsi-meet-master/android/app/src/main/AndroidManifest.xml:31:46-68
+80                <data
+80-->/Users/tony/Downloads/jitsi-meet-master/android/app/src/main/AndroidManifest.xml:31:9-71
+81                    android:host="meet.jit.si"
+81-->/Users/tony/Downloads/jitsi-meet-master/android/app/src/main/AndroidManifest.xml:31:15-45
+82                    android:scheme="https" />
+82-->/Users/tony/Downloads/jitsi-meet-master/android/app/src/main/AndroidManifest.xml:31:46-68
+83            </intent-filter>
+84            <intent-filter>
+84-->/Users/tony/Downloads/jitsi-meet-master/android/app/src/main/AndroidManifest.xml:35:7-40:23
+85                <action android:name="android.intent.action.VIEW" />
+85-->/Users/tony/Downloads/jitsi-meet-master/android/app/src/main/AndroidManifest.xml:28:9-61
+85-->/Users/tony/Downloads/jitsi-meet-master/android/app/src/main/AndroidManifest.xml:28:17-58
+86
+87                <category android:name="android.intent.category.BROWSABLE" />
+87-->/Users/tony/Downloads/jitsi-meet-master/android/app/src/main/AndroidManifest.xml:29:9-70
+87-->/Users/tony/Downloads/jitsi-meet-master/android/app/src/main/AndroidManifest.xml:29:19-67
+88                <category android:name="android.intent.category.DEFAULT" />
+88-->/Users/tony/Downloads/jitsi-meet-master/android/app/src/main/AndroidManifest.xml:30:9-68
+88-->/Users/tony/Downloads/jitsi-meet-master/android/app/src/main/AndroidManifest.xml:30:19-65
+89
+90                <data android:scheme="org.jitsi.meet" />
+90-->/Users/tony/Downloads/jitsi-meet-master/android/app/src/main/AndroidManifest.xml:31:9-71
+90-->/Users/tony/Downloads/jitsi-meet-master/android/app/src/main/AndroidManifest.xml:31:46-68
+91            </intent-filter>
+92        </activity>
+93        <activity
+93-->[:sdk] /Users/tony/Downloads/jitsi-meet-master/android/sdk/build/intermediates/library_manifest/release/AndroidManifest.xml:35:9-41:58
+94            android:name="org.jitsi.meet.sdk.JitsiMeetActivity"
+94-->[:sdk] /Users/tony/Downloads/jitsi-meet-master/android/sdk/build/intermediates/library_manifest/release/AndroidManifest.xml:36:13-64
+95            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize"
+95-->[:sdk] /Users/tony/Downloads/jitsi-meet-master/android/sdk/build/intermediates/library_manifest/release/AndroidManifest.xml:37:13-115
+96            android:launchMode="singleTask"
+96-->[:sdk] /Users/tony/Downloads/jitsi-meet-master/android/sdk/build/intermediates/library_manifest/release/AndroidManifest.xml:38:13-44
+97            android:resizeableActivity="true"
+97-->[:sdk] /Users/tony/Downloads/jitsi-meet-master/android/sdk/build/intermediates/library_manifest/release/AndroidManifest.xml:39:13-46
+98            android:supportsPictureInPicture="true"
+98-->[:sdk] /Users/tony/Downloads/jitsi-meet-master/android/sdk/build/intermediates/library_manifest/release/AndroidManifest.xml:40:13-52
+99            android:windowSoftInputMode="adjustResize" />
+99-->[:sdk] /Users/tony/Downloads/jitsi-meet-master/android/sdk/build/intermediates/library_manifest/release/AndroidManifest.xml:41:13-55
+100        <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />
+100-->[:sdk] /Users/tony/Downloads/jitsi-meet-master/android/sdk/build/intermediates/library_manifest/release/AndroidManifest.xml:42:9-86
+100-->[:sdk] /Users/tony/Downloads/jitsi-meet-master/android/sdk/build/intermediates/library_manifest/release/AndroidManifest.xml:42:19-83
+101
+102        <service
+102-->[:sdk] /Users/tony/Downloads/jitsi-meet-master/android/sdk/build/intermediates/library_manifest/release/AndroidManifest.xml:44:9-50:19
+103            android:name="org.jitsi.meet.sdk.ConnectionService"
+103-->[:sdk] /Users/tony/Downloads/jitsi-meet-master/android/sdk/build/intermediates/library_manifest/release/AndroidManifest.xml:45:13-64
+104            android:permission="android.permission.BIND_TELECOM_CONNECTION_SERVICE" >
+104-->[:sdk] /Users/tony/Downloads/jitsi-meet-master/android/sdk/build/intermediates/library_manifest/release/AndroidManifest.xml:46:13-84
+105            <intent-filter>
+105-->[:sdk] /Users/tony/Downloads/jitsi-meet-master/android/sdk/build/intermediates/library_manifest/release/AndroidManifest.xml:47:13-49:29
+106                <action android:name="android.telecom.ConnectionService" />
+106-->[:sdk] /Users/tony/Downloads/jitsi-meet-master/android/sdk/build/intermediates/library_manifest/release/AndroidManifest.xml:48:17-76
+106-->[:sdk] /Users/tony/Downloads/jitsi-meet-master/android/sdk/build/intermediates/library_manifest/release/AndroidManifest.xml:48:25-73
+107            </intent-filter>
+108        </service>
+109        <service
+109-->[:sdk] /Users/tony/Downloads/jitsi-meet-master/android/sdk/build/intermediates/library_manifest/release/AndroidManifest.xml:51:9-53:63
+110            android:name="org.jitsi.meet.sdk.JitsiMeetOngoingConferenceService"
+110-->[:sdk] /Users/tony/Downloads/jitsi-meet-master/android/sdk/build/intermediates/library_manifest/release/AndroidManifest.xml:52:13-80
+111            android:foregroundServiceType="mediaProjection" />
+111-->[:sdk] /Users/tony/Downloads/jitsi-meet-master/android/sdk/build/intermediates/library_manifest/release/AndroidManifest.xml:53:13-60
+112
+113        <provider
+113-->[:react-native-webview] /Users/tony/Downloads/jitsi-meet-master/node_modules/react-native-webview/android/build/intermediates/library_manifest/release/AndroidManifest.xml:12:9-20:20
+114            android:name="com.reactnativecommunity.webview.RNCWebViewFileProvider"
+114-->[:react-native-webview] /Users/tony/Downloads/jitsi-meet-master/node_modules/react-native-webview/android/build/intermediates/library_manifest/release/AndroidManifest.xml:13:13-83
+115            android:authorities="org.jitsi.meet.fileprovider"
+115-->[:react-native-webview] /Users/tony/Downloads/jitsi-meet-master/node_modules/react-native-webview/android/build/intermediates/library_manifest/release/AndroidManifest.xml:14:13-64
+116            android:exported="false"
+116-->[:react-native-webview] /Users/tony/Downloads/jitsi-meet-master/node_modules/react-native-webview/android/build/intermediates/library_manifest/release/AndroidManifest.xml:15:13-37
+117            android:grantUriPermissions="true" >
+117-->[:react-native-webview] /Users/tony/Downloads/jitsi-meet-master/node_modules/react-native-webview/android/build/intermediates/library_manifest/release/AndroidManifest.xml:16:13-47
+118            <meta-data
+118-->[:react-native-webview] /Users/tony/Downloads/jitsi-meet-master/node_modules/react-native-webview/android/build/intermediates/library_manifest/release/AndroidManifest.xml:17:13-19:63
+119                android:name="android.support.FILE_PROVIDER_PATHS"
+119-->[:react-native-webview] /Users/tony/Downloads/jitsi-meet-master/node_modules/react-native-webview/android/build/intermediates/library_manifest/release/AndroidManifest.xml:18:17-67
+120                android:resource="@xml/file_provider_paths" />
+120-->[:react-native-webview] /Users/tony/Downloads/jitsi-meet-master/node_modules/react-native-webview/android/build/intermediates/library_manifest/release/AndroidManifest.xml:19:17-60
+121        </provider>
+122
+123        <activity
+123-->[com.google.android.gms:play-services-auth:16.0.1] /Users/tony/.gradle/caches/transforms-2/files-2.1/444a2b0422e6674c3f037baf971b1b0b/jetified-play-services-auth-16.0.1/AndroidManifest.xml:23:9-27:75
+124            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
+124-->[com.google.android.gms:play-services-auth:16.0.1] /Users/tony/.gradle/caches/transforms-2/files-2.1/444a2b0422e6674c3f037baf971b1b0b/jetified-play-services-auth-16.0.1/AndroidManifest.xml:24:13-93
+125            android:excludeFromRecents="true"
+125-->[com.google.android.gms:play-services-auth:16.0.1] /Users/tony/.gradle/caches/transforms-2/files-2.1/444a2b0422e6674c3f037baf971b1b0b/jetified-play-services-auth-16.0.1/AndroidManifest.xml:25:13-46
+126            android:exported="false"
+126-->[com.google.android.gms:play-services-auth:16.0.1] /Users/tony/.gradle/caches/transforms-2/files-2.1/444a2b0422e6674c3f037baf971b1b0b/jetified-play-services-auth-16.0.1/AndroidManifest.xml:26:13-37
+127            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+127-->[com.google.android.gms:play-services-auth:16.0.1] /Users/tony/.gradle/caches/transforms-2/files-2.1/444a2b0422e6674c3f037baf971b1b0b/jetified-play-services-auth-16.0.1/AndroidManifest.xml:27:13-72
+128        <!--
+129            Service handling Google Sign-In user revocation. For apps that do not integrate with
+130            Google Sign-In, this service will never be started.
+131        -->
+132        <service
+132-->[com.google.android.gms:play-services-auth:16.0.1] /Users/tony/.gradle/caches/transforms-2/files-2.1/444a2b0422e6674c3f037baf971b1b0b/jetified-play-services-auth-16.0.1/AndroidManifest.xml:33:9-36:110
+133            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
+133-->[com.google.android.gms:play-services-auth:16.0.1] /Users/tony/.gradle/caches/transforms-2/files-2.1/444a2b0422e6674c3f037baf971b1b0b/jetified-play-services-auth-16.0.1/AndroidManifest.xml:34:13-89
+134            android:exported="true"
+134-->[com.google.android.gms:play-services-auth:16.0.1] /Users/tony/.gradle/caches/transforms-2/files-2.1/444a2b0422e6674c3f037baf971b1b0b/jetified-play-services-auth-16.0.1/AndroidManifest.xml:35:13-36
+135            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION" />
+135-->[com.google.android.gms:play-services-auth:16.0.1] /Users/tony/.gradle/caches/transforms-2/files-2.1/444a2b0422e6674c3f037baf971b1b0b/jetified-play-services-auth-16.0.1/AndroidManifest.xml:36:13-107
+136        <service
+136-->[com.google.firebase:firebase-crashlytics:17.2.1] /Users/tony/.gradle/caches/transforms-2/files-2.1/eadb98c4f3fdf7c964a79e5255aac57a/jetified-firebase-crashlytics-17.2.1/AndroidManifest.xml:13:9-19:19
+137            android:name="com.google.firebase.components.ComponentDiscoveryService"
+137-->[com.google.firebase:firebase-crashlytics:17.2.1] /Users/tony/.gradle/caches/transforms-2/files-2.1/eadb98c4f3fdf7c964a79e5255aac57a/jetified-firebase-crashlytics-17.2.1/AndroidManifest.xml:14:13-84
+138            android:directBootAware="true"
+138-->[com.google.firebase:firebase-common:19.3.1] /Users/tony/.gradle/caches/transforms-2/files-2.1/440542da5e3c08b5d1658f435d27ed09/jetified-firebase-common-19.3.1/AndroidManifest.xml:35:13-43
+139            android:exported="false" >
+139-->[com.google.firebase:firebase-crashlytics:17.2.1] /Users/tony/.gradle/caches/transforms-2/files-2.1/eadb98c4f3fdf7c964a79e5255aac57a/jetified-firebase-crashlytics-17.2.1/AndroidManifest.xml:15:13-37
+140            <meta-data
+140-->[com.google.firebase:firebase-crashlytics:17.2.1] /Users/tony/.gradle/caches/transforms-2/files-2.1/eadb98c4f3fdf7c964a79e5255aac57a/jetified-firebase-crashlytics-17.2.1/AndroidManifest.xml:16:13-18:85
+141                android:name="com.google.firebase.components:com.google.firebase.crashlytics.CrashlyticsRegistrar"
+141-->[com.google.firebase:firebase-crashlytics:17.2.1] /Users/tony/.gradle/caches/transforms-2/files-2.1/eadb98c4f3fdf7c964a79e5255aac57a/jetified-firebase-crashlytics-17.2.1/AndroidManifest.xml:17:17-115
+142                android:value="com.google.firebase.components.ComponentRegistrar" />
+142-->[com.google.firebase:firebase-crashlytics:17.2.1] /Users/tony/.gradle/caches/transforms-2/files-2.1/eadb98c4f3fdf7c964a79e5255aac57a/jetified-firebase-crashlytics-17.2.1/AndroidManifest.xml:18:17-82
+143            <meta-data
+143-->[com.google.firebase:firebase-dynamic-links:19.1.0] /Users/tony/.gradle/caches/transforms-2/files-2.1/795c3510da1ce9cb1091e26303d486b1/jetified-firebase-dynamic-links-19.1.0/AndroidManifest.xml:9:13-11:85
+144                android:name="com.google.firebase.components:com.google.firebase.dynamiclinks.internal.FirebaseDynamicLinkRegistrar"
+144-->[com.google.firebase:firebase-dynamic-links:19.1.0] /Users/tony/.gradle/caches/transforms-2/files-2.1/795c3510da1ce9cb1091e26303d486b1/jetified-firebase-dynamic-links-19.1.0/AndroidManifest.xml:10:17-133
+145                android:value="com.google.firebase.components.ComponentRegistrar" />
+145-->[com.google.firebase:firebase-dynamic-links:19.1.0] /Users/tony/.gradle/caches/transforms-2/files-2.1/795c3510da1ce9cb1091e26303d486b1/jetified-firebase-dynamic-links-19.1.0/AndroidManifest.xml:11:17-82
+146            <meta-data
+146-->[com.google.android.gms:play-services-measurement-api:17.5.0] /Users/tony/.gradle/caches/transforms-2/files-2.1/b86f45e21506d00e929774f1863db113/jetified-play-services-measurement-api-17.5.0/AndroidManifest.xml:30:13-32:85
+147                android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar"
+147-->[com.google.android.gms:play-services-measurement-api:17.5.0] /Users/tony/.gradle/caches/transforms-2/files-2.1/b86f45e21506d00e929774f1863db113/jetified-play-services-measurement-api-17.5.0/AndroidManifest.xml:31:17-139
+148                android:value="com.google.firebase.components.ComponentRegistrar" />
+148-->[com.google.android.gms:play-services-measurement-api:17.5.0] /Users/tony/.gradle/caches/transforms-2/files-2.1/b86f45e21506d00e929774f1863db113/jetified-play-services-measurement-api-17.5.0/AndroidManifest.xml:32:17-82
+149            <meta-data
+149-->[com.google.firebase:firebase-installations:16.3.3] /Users/tony/.gradle/caches/transforms-2/files-2.1/42d499f944563e057f906d42424bdd35/jetified-firebase-installations-16.3.3/AndroidManifest.xml:17:13-19:85
+150                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar"
+150-->[com.google.firebase:firebase-installations:16.3.3] /Users/tony/.gradle/caches/transforms-2/files-2.1/42d499f944563e057f906d42424bdd35/jetified-firebase-installations-16.3.3/AndroidManifest.xml:18:17-127
+151                android:value="com.google.firebase.components.ComponentRegistrar" />
+151-->[com.google.firebase:firebase-installations:16.3.3] /Users/tony/.gradle/caches/transforms-2/files-2.1/42d499f944563e057f906d42424bdd35/jetified-firebase-installations-16.3.3/AndroidManifest.xml:19:17-82
+152        </service>
+153
+154        <activity
+154-->[com.google.android.gms:play-services-base:17.0.0] /Users/tony/.gradle/caches/transforms-2/files-2.1/e511266f9136e992c042c3692f0b2156/jetified-play-services-base-17.0.0/AndroidManifest.xml:23:9-26:75
+155            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+155-->[com.google.android.gms:play-services-base:17.0.0] /Users/tony/.gradle/caches/transforms-2/files-2.1/e511266f9136e992c042c3692f0b2156/jetified-play-services-base-17.0.0/AndroidManifest.xml:24:13-79
+156            android:exported="false"
+156-->[com.google.android.gms:play-services-base:17.0.0] /Users/tony/.gradle/caches/transforms-2/files-2.1/e511266f9136e992c042c3692f0b2156/jetified-play-services-base-17.0.0/AndroidManifest.xml:25:13-37
+157            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+157-->[com.google.android.gms:play-services-base:17.0.0] /Users/tony/.gradle/caches/transforms-2/files-2.1/e511266f9136e992c042c3692f0b2156/jetified-play-services-base-17.0.0/AndroidManifest.xml:26:13-72
+158
+159        <receiver
+159-->[com.google.android.gms:play-services-measurement:17.5.0] /Users/tony/.gradle/caches/transforms-2/files-2.1/b27ed4897456b0e09918e12bcd605842/jetified-play-services-measurement-17.5.0/AndroidManifest.xml:29:9-33:20
+160            android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
+160-->[com.google.android.gms:play-services-measurement:17.5.0] /Users/tony/.gradle/caches/transforms-2/files-2.1/b27ed4897456b0e09918e12bcd605842/jetified-play-services-measurement-17.5.0/AndroidManifest.xml:30:13-85
+161            android:enabled="true"
+161-->[com.google.android.gms:play-services-measurement:17.5.0] /Users/tony/.gradle/caches/transforms-2/files-2.1/b27ed4897456b0e09918e12bcd605842/jetified-play-services-measurement-17.5.0/AndroidManifest.xml:31:13-35
+162            android:exported="false" >
+162-->[com.google.android.gms:play-services-measurement:17.5.0] /Users/tony/.gradle/caches/transforms-2/files-2.1/b27ed4897456b0e09918e12bcd605842/jetified-play-services-measurement-17.5.0/AndroidManifest.xml:32:13-37
+163        </receiver>
+164
+165        <service
+165-->[com.google.android.gms:play-services-measurement:17.5.0] /Users/tony/.gradle/caches/transforms-2/files-2.1/b27ed4897456b0e09918e12bcd605842/jetified-play-services-measurement-17.5.0/AndroidManifest.xml:35:9-38:40
+166            android:name="com.google.android.gms.measurement.AppMeasurementService"
+166-->[com.google.android.gms:play-services-measurement:17.5.0] /Users/tony/.gradle/caches/transforms-2/files-2.1/b27ed4897456b0e09918e12bcd605842/jetified-play-services-measurement-17.5.0/AndroidManifest.xml:36:13-84
+167            android:enabled="true"
+167-->[com.google.android.gms:play-services-measurement:17.5.0] /Users/tony/.gradle/caches/transforms-2/files-2.1/b27ed4897456b0e09918e12bcd605842/jetified-play-services-measurement-17.5.0/AndroidManifest.xml:37:13-35
+168            android:exported="false" />
+168-->[com.google.android.gms:play-services-measurement:17.5.0] /Users/tony/.gradle/caches/transforms-2/files-2.1/b27ed4897456b0e09918e12bcd605842/jetified-play-services-measurement-17.5.0/AndroidManifest.xml:38:13-37
+169        <service
+169-->[com.google.android.gms:play-services-measurement:17.5.0] /Users/tony/.gradle/caches/transforms-2/files-2.1/b27ed4897456b0e09918e12bcd605842/jetified-play-services-measurement-17.5.0/AndroidManifest.xml:39:9-43:72
+170            android:name="com.google.android.gms.measurement.AppMeasurementJobService"
+170-->[com.google.android.gms:play-services-measurement:17.5.0] /Users/tony/.gradle/caches/transforms-2/files-2.1/b27ed4897456b0e09918e12bcd605842/jetified-play-services-measurement-17.5.0/AndroidManifest.xml:40:13-87
+171            android:enabled="true"
+171-->[com.google.android.gms:play-services-measurement:17.5.0] /Users/tony/.gradle/caches/transforms-2/files-2.1/b27ed4897456b0e09918e12bcd605842/jetified-play-services-measurement-17.5.0/AndroidManifest.xml:41:13-35
+172            android:exported="false"
+172-->[com.google.android.gms:play-services-measurement:17.5.0] /Users/tony/.gradle/caches/transforms-2/files-2.1/b27ed4897456b0e09918e12bcd605842/jetified-play-services-measurement-17.5.0/AndroidManifest.xml:42:13-37
+173            android:permission="android.permission.BIND_JOB_SERVICE" />
+173-->[com.google.android.gms:play-services-measurement:17.5.0] /Users/tony/.gradle/caches/transforms-2/files-2.1/b27ed4897456b0e09918e12bcd605842/jetified-play-services-measurement-17.5.0/AndroidManifest.xml:43:13-69
+174
+175        <provider
+175-->[com.google.firebase:firebase-common:19.3.1] /Users/tony/.gradle/caches/transforms-2/files-2.1/440542da5e3c08b5d1658f435d27ed09/jetified-firebase-common-19.3.1/AndroidManifest.xml:26:9-31:39
+176            android:name="com.google.firebase.provider.FirebaseInitProvider"
+176-->[com.google.firebase:firebase-common:19.3.1] /Users/tony/.gradle/caches/transforms-2/files-2.1/440542da5e3c08b5d1658f435d27ed09/jetified-firebase-common-19.3.1/AndroidManifest.xml:27:13-77
+177            android:authorities="org.jitsi.meet.firebaseinitprovider"
+177-->[com.google.firebase:firebase-common:19.3.1] /Users/tony/.gradle/caches/transforms-2/files-2.1/440542da5e3c08b5d1658f435d27ed09/jetified-firebase-common-19.3.1/AndroidManifest.xml:28:13-72
+178            android:directBootAware="true"
+178-->[com.google.firebase:firebase-common:19.3.1] /Users/tony/.gradle/caches/transforms-2/files-2.1/440542da5e3c08b5d1658f435d27ed09/jetified-firebase-common-19.3.1/AndroidManifest.xml:29:13-43
+179            android:exported="false"
+179-->[com.google.firebase:firebase-common:19.3.1] /Users/tony/.gradle/caches/transforms-2/files-2.1/440542da5e3c08b5d1658f435d27ed09/jetified-firebase-common-19.3.1/AndroidManifest.xml:30:13-37
+180            android:initOrder="100" />
+180-->[com.google.firebase:firebase-common:19.3.1] /Users/tony/.gradle/caches/transforms-2/files-2.1/440542da5e3c08b5d1658f435d27ed09/jetified-firebase-common-19.3.1/AndroidManifest.xml:31:13-36
+181
+182        <meta-data
+182-->[com.google.android.gms:play-services-basement:17.0.0] /Users/tony/.gradle/caches/transforms-2/files-2.1/ba14453cf9a455e1768edb02be833870/jetified-play-services-basement-17.0.0/AndroidManifest.xml:23:9-25:69
+183            android:name="com.google.android.gms.version"
+183-->[com.google.android.gms:play-services-basement:17.0.0] /Users/tony/.gradle/caches/transforms-2/files-2.1/ba14453cf9a455e1768edb02be833870/jetified-play-services-basement-17.0.0/AndroidManifest.xml:24:13-58
+184            android:value="@integer/google_play_services_version" />
+184-->[com.google.android.gms:play-services-basement:17.0.0] /Users/tony/.gradle/caches/transforms-2/files-2.1/ba14453cf9a455e1768edb02be833870/jetified-play-services-basement-17.0.0/AndroidManifest.xml:25:13-66
+185
+186        <service
+186-->[com.google.android.datatransport:transport-backend-cct:2.3.1] /Users/tony/.gradle/caches/transforms-2/files-2.1/a3bc5508b17e3c753941b085460fc3f1/jetified-transport-backend-cct-2.3.1/AndroidManifest.xml:29:9-35:19
+187            android:name="com.google.android.datatransport.runtime.backends.TransportBackendDiscovery"
+187-->[com.google.android.datatransport:transport-backend-cct:2.3.1] /Users/tony/.gradle/caches/transforms-2/files-2.1/a3bc5508b17e3c753941b085460fc3f1/jetified-transport-backend-cct-2.3.1/AndroidManifest.xml:30:13-103
+188            android:exported="false" >
+188-->[com.google.android.datatransport:transport-backend-cct:2.3.1] /Users/tony/.gradle/caches/transforms-2/files-2.1/a3bc5508b17e3c753941b085460fc3f1/jetified-transport-backend-cct-2.3.1/AndroidManifest.xml:31:13-37
+189            <meta-data
+189-->[com.google.android.datatransport:transport-backend-cct:2.3.1] /Users/tony/.gradle/caches/transforms-2/files-2.1/a3bc5508b17e3c753941b085460fc3f1/jetified-transport-backend-cct-2.3.1/AndroidManifest.xml:32:13-34:39
+190                android:name="backend:com.google.android.datatransport.cct.CctBackendFactory"
+190-->[com.google.android.datatransport:transport-backend-cct:2.3.1] /Users/tony/.gradle/caches/transforms-2/files-2.1/a3bc5508b17e3c753941b085460fc3f1/jetified-transport-backend-cct-2.3.1/AndroidManifest.xml:33:17-94
+191                android:value="cct" />
+191-->[com.google.android.datatransport:transport-backend-cct:2.3.1] /Users/tony/.gradle/caches/transforms-2/files-2.1/a3bc5508b17e3c753941b085460fc3f1/jetified-transport-backend-cct-2.3.1/AndroidManifest.xml:34:17-36
+192        </service>
+193        <service
+193-->[com.google.android.datatransport:transport-runtime:2.2.4] /Users/tony/.gradle/caches/transforms-2/files-2.1/ab24aaabe2577a1eca173653c622bd76/jetified-transport-runtime-2.2.4/AndroidManifest.xml:26:9-30:19
+194            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService"
+194-->[com.google.android.datatransport:transport-runtime:2.2.4] /Users/tony/.gradle/caches/transforms-2/files-2.1/ab24aaabe2577a1eca173653c622bd76/jetified-transport-runtime-2.2.4/AndroidManifest.xml:27:13-117
+195            android:exported="false"
+195-->[com.google.android.datatransport:transport-runtime:2.2.4] /Users/tony/.gradle/caches/transforms-2/files-2.1/ab24aaabe2577a1eca173653c622bd76/jetified-transport-runtime-2.2.4/AndroidManifest.xml:28:13-37
+196            android:permission="android.permission.BIND_JOB_SERVICE" >
+196-->[com.google.android.datatransport:transport-runtime:2.2.4] /Users/tony/.gradle/caches/transforms-2/files-2.1/ab24aaabe2577a1eca173653c622bd76/jetified-transport-runtime-2.2.4/AndroidManifest.xml:29:13-69
+197        </service>
+198
+199        <receiver
+199-->[com.google.android.datatransport:transport-runtime:2.2.4] /Users/tony/.gradle/caches/transforms-2/files-2.1/ab24aaabe2577a1eca173653c622bd76/jetified-transport-runtime-2.2.4/AndroidManifest.xml:32:9-34:40
+200            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver"
+200-->[com.google.android.datatransport:transport-runtime:2.2.4] /Users/tony/.gradle/caches/transforms-2/files-2.1/ab24aaabe2577a1eca173653c622bd76/jetified-transport-runtime-2.2.4/AndroidManifest.xml:33:13-132
+201            android:exported="false" />
+201-->[com.google.android.datatransport:transport-runtime:2.2.4] /Users/tony/.gradle/caches/transforms-2/files-2.1/ab24aaabe2577a1eca173653c622bd76/jetified-transport-runtime-2.2.4/AndroidManifest.xml:34:13-37
+202    </application>
+203
+204</manifest>

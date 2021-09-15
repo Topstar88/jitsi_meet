@@ -8,8 +8,6 @@ import android.text.TextUtils;
 
 import com.dropbox.core.DbxException;
 import com.dropbox.core.DbxRequestConfig;
-import com.dropbox.core.android.Auth;
-import com.dropbox.core.oauth.DbxCredential;
 import com.dropbox.core.v2.DbxClientV2;
 import com.dropbox.core.v2.users.FullAccount;
 import com.dropbox.core.v2.users.SpaceAllocation;
@@ -19,6 +17,7 @@ import com.facebook.react.bridge.LifecycleEventListener;
 import com.facebook.react.bridge.Promise;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
+import com.dropbox.core.android.Auth;
 import com.facebook.react.bridge.ReactMethod;
 import com.facebook.react.bridge.WritableMap;
 import com.facebook.react.module.annotations.ReactModule;
@@ -67,7 +66,7 @@ class DropboxModule
     @ReactMethod
     public void authorize(final Promise promise) {
         if (isEnabled) {
-            Auth.startOAuth2PKCE(this.getCurrentActivity(), appKey, DbxRequestConfig.newBuilder(clientId).build());
+            Auth.startOAuth2Authentication(this.getCurrentActivity(), appKey);
             this.promise = promise;
         } else {
             promise.reject(
@@ -182,15 +181,10 @@ class DropboxModule
 
     @Override
     public void onHostResume() {
-        DbxCredential credential = Auth.getDbxCredential();
+        String token = Auth.getOAuth2Token();
 
-        if (credential != null && this.promise != null) {
-            WritableMap result = Arguments.createMap();
-            result.putString("token", credential.getAccessToken());
-            result.putString("rToken", credential.getRefreshToken());
-            result.putDouble("expireDate", credential.getExpiresAt());
-
-            this.promise.resolve(result);
+        if (token != null && this.promise != null) {
+            this.promise.resolve(token);
             this.promise = null;
         }
     }

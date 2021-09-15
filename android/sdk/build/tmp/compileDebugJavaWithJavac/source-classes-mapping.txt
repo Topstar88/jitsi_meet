@@ -1,0 +1,108 @@
+org/jitsi/meet/sdk/ProximityModule.java
+ org.jitsi.meet.sdk.ProximityModule
+ org.jitsi.meet.sdk.ProximityModule$1
+org/jitsi/meet/sdk/PictureInPictureModule.java
+ org.jitsi.meet.sdk.PictureInPictureModule
+org/jitsi/meet/sdk/AudioModeModule.java
+ org.jitsi.meet.sdk.AudioModeModule
+ org.jitsi.meet.sdk.AudioModeModule$1
+ org.jitsi.meet.sdk.AudioModeModule$2
+ org.jitsi.meet.sdk.AudioModeModule$3
+ org.jitsi.meet.sdk.AudioModeModule$4
+ org.jitsi.meet.sdk.AudioModeModule$5
+ org.jitsi.meet.sdk.AudioModeModule$AudioDeviceHandlerInterface
+org/jitsi/meet/sdk/RNConnectionService.java
+ org.jitsi.meet.sdk.RNConnectionService
+ org.jitsi.meet.sdk.RNConnectionService$CallAudioStateListener
+org/jitsi/meet/sdk/incoming_call/IncomingCallInfo.java
+ org.jitsi.meet.sdk.incoming_call.IncomingCallInfo
+org/jitsi/meet/sdk/ListenerUtils.java
+ org.jitsi.meet.sdk.ListenerUtils
+ org.jitsi.meet.sdk.ListenerUtils$1
+org/jitsi/meet/sdk/WiFiStatsModule.java
+ org.jitsi.meet.sdk.WiFiStatsModule
+ org.jitsi.meet.sdk.WiFiStatsModule$1
+org/jitsi/meet/sdk/AudioDeviceHandlerConnectionService.java
+ org.jitsi.meet.sdk.AudioDeviceHandlerConnectionService
+ org.jitsi.meet.sdk.AudioDeviceHandlerConnectionService$1
+ org.jitsi.meet.sdk.AudioDeviceHandlerConnectionService$2
+org/jitsi/meet/sdk/JitsiMeet.java
+ org.jitsi.meet.sdk.JitsiMeet
+org/jitsi/meet/sdk/OngoingNotification.java
+ org.jitsi.meet.sdk.OngoingNotification
+org/jitsi/meet/sdk/JitsiMeetOngoingConferenceService.java
+ org.jitsi.meet.sdk.JitsiMeetOngoingConferenceService
+ org.jitsi.meet.sdk.JitsiMeetOngoingConferenceService$Actions
+org/jitsi/meet/sdk/DefaultHardwareBackBtnHandlerImpl.java
+ org.jitsi.meet.sdk.DefaultHardwareBackBtnHandlerImpl
+org/jitsi/meet/sdk/JitsiMeetActivityInterface.java
+ org.jitsi.meet.sdk.JitsiMeetActivityInterface
+org/jitsi/meet/sdk/log/JitsiMeetDefaultLogHandler.java
+ org.jitsi.meet.sdk.log.JitsiMeetDefaultLogHandler
+org/jitsi/meet/sdk/JitsiMeetViewListener.java
+ org.jitsi.meet.sdk.JitsiMeetViewListener
+org/jitsi/meet/sdk/ExternalAPIModule.java
+ org.jitsi.meet.sdk.ExternalAPIModule
+org/jitsi/meet/sdk/log/JitsiMeetBaseLogHandler.java
+ org.jitsi.meet.sdk.log.JitsiMeetBaseLogHandler
+org/jitsi/meet/sdk/JitsiMeetUserInfo.java
+ org.jitsi.meet.sdk.JitsiMeetUserInfo
+org/jitsi/meet/sdk/BuildConfig.java
+ org.jitsi.meet.sdk.BuildConfig
+org/jitsi/meet/sdk/JitsiMeetActivity.java
+ org.jitsi.meet.sdk.JitsiMeetActivity
+org/jitsi/meet/sdk/JitsiMeetActivityDelegate.java
+ org.jitsi.meet.sdk.JitsiMeetActivityDelegate
+ org.jitsi.meet.sdk.JitsiMeetActivityDelegate$1
+org/jitsi/meet/sdk/LogBridgeModule.java
+ org.jitsi.meet.sdk.LogBridgeModule
+org/jitsi/meet/sdk/LocaleDetector.java
+ org.jitsi.meet.sdk.LocaleDetector
+org/jitsi/meet/sdk/ReactInstanceManagerHolder.java
+ org.jitsi.meet.sdk.ReactInstanceManagerHolder
+ org.jitsi.meet.sdk.ReactInstanceManagerHolder$1
+org/jitsi/meet/sdk/ReactPackageAdapter.java
+ org.jitsi.meet.sdk.ReactPackageAdapter
+org/jitsi/meet/sdk/ConnectionService.java
+ org.jitsi.meet.sdk.ConnectionService
+ org.jitsi.meet.sdk.ConnectionService$ConnectionImpl
+org/jitsi/meet/sdk/log/JitsiMeetLogger.java
+ org.jitsi.meet.sdk.log.JitsiMeetLogger
+org/jitsi/meet/sdk/JitsiMeetConferenceOptions.java
+ org.jitsi.meet.sdk.JitsiMeetConferenceOptions
+ org.jitsi.meet.sdk.JitsiMeetConferenceOptions$1
+ org.jitsi.meet.sdk.JitsiMeetConferenceOptions$Builder
+org/jitsi/meet/sdk/AndroidSettingsModule.java
+ org.jitsi.meet.sdk.AndroidSettingsModule
+org/jitsi/meet/sdk/AppInfoModule.java
+ org.jitsi.meet.sdk.AppInfoModule
+org/jitsi/meet/sdk/DropboxModule.java
+ org.jitsi.meet.sdk.DropboxModule
+org/jitsi/meet/sdk/net/NAT64AddrInfo.java
+ org.jitsi.meet.sdk.net.NAT64AddrInfo
+org/jitsi/meet/sdk/JavaScriptSandboxModule.java
+ org.jitsi.meet.sdk.JavaScriptSandboxModule
+org/jitsi/meet/sdk/JitsiMeetFragment.java
+ org.jitsi.meet.sdk.JitsiMeetFragment
+org/jitsi/meet/sdk/incoming_call/IncomingCallView.java
+ org.jitsi.meet.sdk.incoming_call.IncomingCallView
+org/jitsi/meet/sdk/JitsiMeetView.java
+ org.jitsi.meet.sdk.JitsiMeetView
+org/jitsi/meet/sdk/net/NAT64AddrInfoModule.java
+ org.jitsi.meet.sdk.net.NAT64AddrInfoModule
+org/jitsi/meet/sdk/AudioDeviceHandlerGeneric.java
+ org.jitsi.meet.sdk.AudioDeviceHandlerGeneric
+ org.jitsi.meet.sdk.AudioDeviceHandlerGeneric$1
+ org.jitsi.meet.sdk.AudioDeviceHandlerGeneric$2
+ org.jitsi.meet.sdk.AudioDeviceHandlerGeneric$3
+org/jitsi/meet/sdk/BaseReactView.java
+ org.jitsi.meet.sdk.BaseReactView
+org/jitsi/meet/sdk/incoming_call/IncomingCallViewListener.java
+ org.jitsi.meet.sdk.incoming_call.IncomingCallViewListener
+org/jitsi/meet/sdk/JitsiMeetUncaughtExceptionHandler.java
+ org.jitsi.meet.sdk.JitsiMeetUncaughtExceptionHandler
+org/jitsi/meet/sdk/AmplitudeModule.java
+ org.jitsi.meet.sdk.AmplitudeModule
+org/jitsi/meet/sdk/OngoingConferenceTracker.java
+ org.jitsi.meet.sdk.OngoingConferenceTracker
+ org.jitsi.meet.sdk.OngoingConferenceTracker$OngoingConferenceListener

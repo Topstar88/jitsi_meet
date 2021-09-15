@@ -3,11 +3,10 @@
 **/
 
 .popupmenu {
-    background-color: $menuBG;
-    border-radius: 3px;
-    min-width: 150px;
+    min-width: 75px;
     text-align: left;
     padding: 0px;
+    width: 180px;
     white-space: nowrap;
 
     &__item {
@@ -40,7 +39,6 @@
 
     &__text {
         display: inline-block;
-        margin-left: 8px;
         vertical-align: middle;
     }
 
@@ -112,6 +110,6 @@ ul.popupmenu {
     margin: -16px -24px;
 }
 
-span.localvideomenu:hover ul.popupmenu, span.remotevideomenu:hover ul.popupmenu, ul.popupmenu:hover {
+span.remotevideomenu:hover ul.popupmenu, ul.popupmenu:hover {
     display:block !important;
 }

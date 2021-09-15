@@ -86,7 +86,6 @@
 
         .video-quality-dialog-label-container.active {
             color: $videoQualityActive;
-            font-weight: bold;
 
             &::before {
                 background: $videoQualityActive;
@@ -111,4 +110,8 @@
     .video-quality-dialog-title {
         display: none;
     }
+}
+
+#videoResolutionLabel {
+    z-index: $zindex3 + 1;
 }

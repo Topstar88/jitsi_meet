@@ -26,6 +26,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 import org.jitsi.meet.sdk.log.JitsiMeetLogger;
+import org.webrtc.voiceengine.WebRtcAudioUtils;
 
 
 /**
@@ -35,7 +36,8 @@ import org.jitsi.meet.sdk.log.JitsiMeetLogger;
 @RequiresApi(Build.VERSION_CODES.O)
 class AudioDeviceHandlerConnectionService implements
         AudioModeModule.AudioDeviceHandlerInterface,
-        RNConnectionService.CallAudioStateListener {
+        RNConnectionService.CallAudioStateListener,
+        AudioManager.OnAudioFocusChangeListener {
 
     private final static String TAG = AudioDeviceHandlerConnectionService.class.getSimpleName();
 
@@ -159,25 +161,58 @@ class AudioDeviceHandlerConnectionService implements
             JitsiMeetLogger.w(TAG + " Couldn't set call audio state listener, module is null");
         }
     }
-
     public void setAudioRoute(String audioDevice) {
         int newAudioRoute = audioDeviceToRouteInt(audioDevice);
 
         RNConnectionService.setAudioRoute(newAudioRoute);
     }
-
     @Override
     public boolean setMode(int mode) {
-        if (mode != AudioModeModule.DEFAULT) {
-            // This shouldn't be needed when using ConnectionService, but some devices have been
-            // observed not doing it.
-            try {
-                audioManager.setMicrophoneMute(false);
-            } catch (Throwable tr) {
-                JitsiMeetLogger.w(tr, TAG + " Failed to unmute the microphone");
-            }
+        if (mode == AudioModeModule.DEFAULT) {
+            audioFocusLost = false;
+            audioManager.setMode(AudioManager.MODE_NORMAL);
+            audioManager.abandonAudioFocus(this);
+            audioManager.setSpeakerphoneOn(false);
+            return true;
         }
 
+        WebRtcAudioUtils.setWebRtcBasedAcousticEchoCanceler(true);
+        WebRtcAudioUtils.setWebRtcBasedNoiseSuppressor(true);
+
+        module.initialize();
+
+        audioManager.setSpeakerphoneOn(true);
+        audioManager.setMicrophoneMute(false);
+
         return true;
+    }
+
+    private boolean audioFocusLost = false;
+    @Override
+    public void onAudioFocusChange(final int i) {
+        module.runInAudioThread(new Runnable() {
+            @Override
+            public void run() {
+                switch (i) {
+                    case AudioManager.AUDIOFOCUS_GAIN: {
+                        JitsiMeetLogger.d(TAG + " Audio focus gained");
+                        // Some other application potentially stole our audio focus
+                        // temporarily. Restore our mode.
+                        if (audioFocusLost) {
+                            module.updateAudioRoute();
+                        }
+                        audioFocusLost = false;
+                        break;
+                    }
+                    case AudioManager.AUDIOFOCUS_LOSS:
+                    case AudioManager.AUDIOFOCUS_LOSS_TRANSIENT:
+                    case AudioManager.AUDIOFOCUS_LOSS_TRANSIENT_CAN_DUCK: {
+                        JitsiMeetLogger.d(TAG + " Audio focus lost");
+                        audioFocusLost = true;
+                        break;
+                    }
+                }
+            }
+        });
     }
 }

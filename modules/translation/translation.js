@@ -1,14 +1,10 @@
-/*  @flow */
+/* @flow */
 
 import jqueryI18next from 'jquery-i18next';
 
 import { i18next } from '../../react/features/base/i18n';
 
 declare var $: Function;
-
-type DocumentElement = {
-    lang: string
-}
 
 /**
  * Notifies that the {@link i18next} instance has finished its initialization.
@@ -17,12 +13,7 @@ type DocumentElement = {
  * @private
  */
 function _onI18nInitialized() {
-
-    const documentElement: DocumentElement
-        = document.documentElement || {};
-
     $('[data-i18n]').localize();
-    documentElement.lang = i18next.language;
 }
 
 /**
