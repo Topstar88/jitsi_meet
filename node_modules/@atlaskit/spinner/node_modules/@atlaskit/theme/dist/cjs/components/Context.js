@@ -1,0 +1,17 @@
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.Provider = exports.Consumer = void 0;
+
+var _react = require("react");
+
+var _createContext = (0, _react.createContext)({
+  mode: 'light'
+}),
+    Consumer = _createContext.Consumer,
+    Provider = _createContext.Provider;
+
+exports.Provider = Provider;
+exports.Consumer = Consumer;

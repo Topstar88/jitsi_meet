@@ -1,0 +1,77 @@
+{
+  "name": "strophe.js",
+  "description": "Strophe.js is an XMPP library for JavaScript",
+  "version": "1.3.4",
+  "homepage": "http://strophe.im/strophejs",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/strophe/strophejs.git"
+  },
+  "keywords": [
+    "xmpp",
+    "message",
+    "bosh",
+    "websocket",
+    "browser"
+  ],
+  "files": [
+    "src/",
+    "dist/",
+    "CHANGELOG.txt",
+    "LICENSE.txt",
+    "README.txt"
+  ],
+  "author": "Jack Moffit (metajack)",
+  "contributors": [
+    "Nathan Zorn (thepug)",
+    "Andreas Guth (Gordin)",
+    "Anton Stroganov (Aeon)",
+    "Florian Zeitz (Florob)",
+    "Christopher Zorn (twonds)",
+    "dodo",
+    "Lee Boynton (lboynton)",
+    "Theo Cushion (theozaurus)",
+    "Brendon Crawford (brendoncrawford)",
+    "JC Brand (jcbrand)"
+  ],
+  "license": "MIT",
+  "browserslist": ">1%, maintained node versions",
+  "main": "dist/strophe.common.js",
+  "browser": "dist/strophe.umd.js",
+  "module": "dist/strophe.esm.js",
+  "unpkg": "dist/strophe.umd.min.js",
+  "scripts": {
+    "build": "rollup -c",
+    "lint": "make jshint",
+    "clean": "make clean",
+    "doc": "make doc",
+    "prepare": "yarpm run build"
+  },
+  "volo": {
+    "url": "https://raw.githubusercontent.com/strophe/strophejs/release-{version}/strophe.js"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "almond": "~0.3.0",
+    "es6-promise": "^4.1.0",
+    "eslint": "4.19.1",
+    "http-server": "^0.10.0",
+    "jquery": "3.2.1",
+    "minimist": "^1.2.0",
+    "npm": "^5.7.1",
+    "qunitjs": "~1.16.0",
+    "requirejs": "2.3.5",
+    "rollup": "^1.12.3",
+    "rollup-plugin-babel": "^4.3.2",
+    "rollup-plugin-commonjs": "^10.0.0",
+    "rollup-plugin-node-globals": "^1.4.0",
+    "rollup-plugin-node-resolve": "^5.0.0",
+    "rollup-plugin-uglify": "^6.0.2",
+    "run-headless-chromium": "^0.1.1",
+    "sinon": "1.17.7",
+    "sinon-qunit": "~2.0.0",
+    "yarpm": "^0.2.1"
+  },
+  "dependencies": {}
+}

@@ -1,0 +1,35 @@
+[
+  {
+    "id": "src.main",
+    "name": "main",
+    "stats": {
+      "size": 11694,
+      "gzipSize": 3634
+    }
+  },
+  {
+    "id": "node_modules.main",
+    "name": "node_modules [main]",
+    "stats": {
+      "size": 19515,
+      "gzipSize": 7026
+    }
+  },
+  {
+    "id": "atlaskit.core.main",
+    "name": "main",
+    "stats": {
+      "size": 26816,
+      "gzipSize": 6708
+    }
+  },
+  {
+    "id": "combined.main",
+    "name": "main",
+    "threshold": 0.01,
+    "stats": {
+      "size": 57278,
+      "gzipSize": 16405
+    }
+  }
+]

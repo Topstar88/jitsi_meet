@@ -1,0 +1,69 @@
+buildscript {
+  repositories {
+    google()
+    jcenter()
+  }
+
+  dependencies {
+    //noinspection GradleDependency
+    classpath 'com.android.tools.build:gradle:3.2.1'
+  }
+}
+
+plugins {
+  id "com.diffplug.gradle.spotless" version "3.23.0"
+}
+
+spotless {
+  enforceCheck false
+
+  java {
+    target '**/*.java'
+    googleJavaFormat().aosp()
+    removeUnusedImports()
+    licenseHeaderFile 'licenseHeader.txt'
+  }
+  format 'xml', {
+    target fileTree('.') {
+      include '**/*.xml', '**/*.xsd'
+      exclude '**/build/**'
+    }
+    // Use for example eclipseWtp('xml', '4.7.3a') to specify a specific version of Eclipse,
+    // available versions are: https://github.com/diffplug/spotless/tree/master/lib-extra/src/main/resources/com/diffplug/spotless/extra/eclipse_wtp_formatters
+    eclipseWtp('xml')
+  }
+}
+
+def getExtOrDefault(name) {
+  return rootProject.ext.has(name) ? rootProject.ext.get(name) : project.properties['ReactNativeNetInfo_' + name]
+}
+
+def getExtOrIntegerDefault(name) {
+  return rootProject.ext.has(name) ? rootProject.ext.get(name) : (project.properties['ReactNativeNetInfo_' + name]).toInteger()
+}
+
+apply plugin: 'com.android.library'
+
+android {
+  compileSdkVersion getExtOrIntegerDefault('compileSdkVersion')
+  buildToolsVersion getExtOrDefault('buildToolsVersion')
+
+  defaultConfig {
+    minSdkVersion getExtOrIntegerDefault('minSdkVersion')
+    targetSdkVersion getExtOrIntegerDefault('targetSdkVersion')
+  }
+  lintOptions{
+    abortOnError false
+  }
+}
+
+repositories {
+  google()
+  jcenter()
+  mavenCentral()
+}
+
+dependencies {
+  //noinspection GradleDynamicVersion
+  api 'com.facebook.react:react-native:+'
+}
